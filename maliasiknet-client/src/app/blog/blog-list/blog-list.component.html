@@ -1,0 +1,19 @@
+<div class="home-container">
+  <h1>Karşılama Mesajınız</h1>
+  <div class="card-container">
+    <!-- Düzeltme: "post.date" yerine "post.createdAt" kullanılıyor -->
+    <mat-card *ngFor="let post of blogPosts" class="content-card">
+      <mat-card-header>
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-subtitle>{{ post.createdAt | date }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="post.thumbnailImageUrl" alt="Post image">
+      <mat-card-content>
+        <p>{{ post.summary }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/post', post.id]">Devamını Oku</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
