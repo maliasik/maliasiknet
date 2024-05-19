@@ -1,3 +1,5 @@
+// src/app/blog/blog-list/blog-list.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { BlogPost } from 'src/app/models/blog-post.model';
 import { BlogService } from '../blog.service';
@@ -8,11 +10,28 @@ import { BlogService } from '../blog.service';
   styleUrls: ['./blog-list.component.css'],
 })
 export class BlogListComponent implements OnInit {
-  blogPosts: BlogPost[] = []; // Bu dizi servisten gelecek verileri tutmak için kullanılacak.
+  allBlogPosts: BlogPost[] = []; // Tüm blogları tutan dizi
+  blogPosts: BlogPost[] = []; // Kategoriye göre filtrelenmiş blogları tutan dizi
+  selectedCategory: string = 'Web Development'; // Gösterilecek kategori
 
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
-    this.blogPosts = this.blogService.getBlogPosts(); // Servisten veriler alınıp diziye atandı.
+    // Tüm blogları al
+    this.allBlogPosts = this.blogService.getBlogPosts();
+    
+    // Seçilen kategoriye göre filtrele
+    this.filterBlogPosts();
+  }
+
+  // Kategori değiştikçe çağrılacak metod
+  onCategoryChange(category: string) {
+    this.selectedCategory = category;
+    this.filterBlogPosts();
+  }
+
+  // Blogları kategoriye göre filtrele
+  private filterBlogPosts() {
+    this.blogPosts = this.allBlogPosts.filter(post => post.category === this.selectedCategory);
   }
 }

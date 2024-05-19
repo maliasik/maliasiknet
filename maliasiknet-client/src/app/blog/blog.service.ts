@@ -46,5 +46,9 @@ export class BlogService {
     return this.blogPosts.find(post => post.id === id);
   }
 
+  getBlogPostsByCategory(category: string): BlogPost[] {
+    return this.blogPosts.filter(post => post.category === category);
+  }
+
   // ...Diğer metodlar gerektiğinde burada tanımlanabilir.
 }

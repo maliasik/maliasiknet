@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
     BlogRoutingModule,
     MatToolbarModule,
     MatCardModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatGridListModule
   ]
 })
 export class BlogModule { }

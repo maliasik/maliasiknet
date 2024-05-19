@@ -1,16 +1,6 @@
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="over" opened="false">
-      <!-- Sidenav içeriği -->
-      <a mat-list-item routerLink="/">Anasayfa</a>
-      <a mat-list-item routerLink="/blog">Blog</a>
-      <!-- Diğer menü öğeleri -->
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
+
       <app-header></app-header>
   
       <router-outlet></router-outlet>
   
       <app-footer></app-footer>
-    </mat-sidenav-content>
-  </mat-sidenav-container>

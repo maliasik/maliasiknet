@@ -1,3 +1,5 @@
+// src/app/blog/blog-detail/blog-detail.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BlogPost } from 'src/app/models/blog-post.model';
@@ -20,7 +22,15 @@ export class BlogDetailComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
-        this.post = this.blogService.getBlogPostById(+id);
+        // C# tarafındaki API'yi çağırarak belirli bir blog gönderisinin detaylarını al
+        this.blogService.getBlogPostByIdFromApi(+id).subscribe(
+          (post) => {
+            this.post = post;
+          },
+          (error) => {
+            console.error('Blog detayları alınamadı:', error);
+          }
+        );
       }
     });
   }

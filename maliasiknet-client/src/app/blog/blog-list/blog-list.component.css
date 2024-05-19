@@ -1,31 +1,15 @@
-.blog-list-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .blog-post {
-    width: 100%;
-    max-width: 340px;
-    /* Dilerseniz kart için daha fazla stil belirleyebilirsiniz. Örneğin; */
-    margin-bottom: 30px;
-  }
-  
-  /* Karanlık mod veya temaya göre CSS değişkenleriyle renklendirme yapabilirsiniz. */
-  .mat-card-title,
-  .mat-card-subtitle {
-    color: var(--text-main-color);
-  }
-  
-  mat-card-content p {
-    color: var(--text-secondary-color);
-    /* Yazı özeti için stil */
-  }
-  
-  mat-card-actions {
-    display: flex;
-    justify-content: flex-start;
-    padding: 0 16px 16px 16px;
-  }
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content-card {
+  max-width: 400px;
+  margin: 0 auto;
+  transition: transform 0.2s;
+}
+
+.content-card:hover {
+  transform: scale(1.05);
+}

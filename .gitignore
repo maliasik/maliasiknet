@@ -1,0 +1,5 @@
+# Visual Studio cache files
+.vs/
+.\maliasiknet-backend\.vs\
+.\maliasiknet-backend\bin\
+.\maliasiknet-backend\obj\
